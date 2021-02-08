@@ -1,0 +1,129 @@
+body {
+    background-color: rgb(240, 240, 240);
+    font-family: Arial, sans-serif;
+}
+
+form {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+}
+
+input[type=password], input[type=text], textarea {
+    margin-bottom: 10px;
+}
+
+input[type=submit] {
+    background-color: rgb(20, 126, 188);
+    border: 0;
+    color: white;
+    padding: 6px 12px;
+}
+
+input[type=submit]:hover {
+    background-color: rgb(40, 146, 208);
+}
+
+textarea {
+    font-family: Arial, sans-serif;
+}
+
+.blog-title {
+    text-align: center;
+}
+
+.button-link {
+    display: inline-block;
+    background-color: rgb(20, 126, 188);
+    border: none;
+    color: white;
+    cursor: default;
+    margin: 4px 2px;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    text-align: center;
+    text-decoration: none;
+}
+
+.button-link:hover {
+    background-color: rgb(40, 146, 208);
+}
+
+.comment {
+    border-left: 4px solid rgb(200, 200, 200);
+}
+
+.comment p {
+    margin-left: 10px;
+}
+
+.comment .details {
+    color:rgb(160, 160, 160);
+    font-size: 0.85rem;
+}
+
+.comment-new {
+    margin-top: 40px;
+}
+
+.comment-new textarea {
+    resize: none;
+    width: 100%;
+}
+
+.form-error {
+    background-color: rgb(255 196 196);
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid rgb(255, 156, 156);
+    margin-bottom: 10px;
+}
+
+.post {
+    width: 100%;
+}
+
+.post .comments {
+    list-style-type: none;
+}
+
+.post .details {
+    color:rgb(160, 160, 160);
+    font-size: 0.85rem;
+}
+
+.post .title {
+    color: rgb(20, 126, 188);
+}
+
+.post .title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.post-new input[type=text] {
+    width: 500px;
+}
+
+.post-new textarea {
+    resize: none;
+    width: 100%;
+}
+
+#blog-content {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 auto;
+    padding: 25px;
+    width: 700px;
+}
+
+#blog-login-bar {
+    font-size: 0.8rem;
+    text-align: right;
+    margin: 0 auto 5px auto;
+    width: 730px;
+}

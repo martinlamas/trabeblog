@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block content %}
+
+{% if error_message %}
+<div class="form-error">{{ error_message }}</div>
+{% endif %}
+
+<form class="post-new" action="{% url 'post_create' %}" method="post">
+    {% csrf_token %}
+    <label for="title">Título</label>
+    <input id="title" name="title" type="text">
+
+    <label for="content">Contenido</label>
+    <textarea id="content" name="content" rows="10"></textarea>
+
+    <input type="submit" value="Crear Post">
+</form>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<a class="button-link" href="{% url 'post_new' %}">Nuevo post</a>
+
+{% if posts %}
+{% for post in posts %}
+<div class="post">
+    <h2 class="title">
+        <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
+    </h2>
+    <p class="details">por {{ post.author.username }} | {{ post.last_update_date }}</p>
+    <p>{{ post.content }}</p>
+</div>
+{% endfor %}
+{% else %}
+<p>Nadie ha escrito un post todavía :(</p>
+{% endif %}
+
+{% endblock %}

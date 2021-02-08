@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+
+    <title>{% block title %}Trabeblog{% endblock %}</title>
+</head>
+
+<body>
+    <h1 class="blog-title">Trabeblog</h1>
+    <div id="blog-login-bar">
+        {% if user.is_authenticated %}
+        Sesión iniciada como {{ user.get_username }} | <a href="{% url 'logout' %}">Cerrar sesión</a>
+        {% else %}
+        Sesión iniciada como invitado | <a href="{% url 'login' %}">Iniciar sesión</a>
+        {% endif %}
+    </div>
+    <div id="blog-content">{% block content %}{% endblock %}</div>
+</body>
+
+</html>

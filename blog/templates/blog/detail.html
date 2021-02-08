@@ -1,0 +1,33 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="post">
+    <h2 class="title">{{ post.title }}</h2>
+    <p class="details">por {{ post.author.username }} | {{ post.last_update_date }}</p>
+    <p>{{ post.content }}</p>
+
+    {% if post.comment_set %}
+    <ul class="comments">
+        {% for comment in post.comment_set.all %}
+        <li class="comment">
+            <p>{{ comment.content }}</p>
+            <p class="details">por {{ comment.author.username }} | {{comment.last_update_date}}</p>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if user.is_authenticated %}
+    <form class="comment-new" action="{% url 'comment_create' post_id=post.id %}" method="post">
+        {% csrf_token %}
+        <label for="content">Comentar:</label>
+        <textarea id="content" name="content" rows="10"></textarea>
+
+        <input type="submit" value="Crear Comentario">
+    </form>
+    {% endif %}
+</div>
+
+{% endblock %}
